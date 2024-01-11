@@ -6,22 +6,197 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/sample1"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/default_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sample8"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/leftarrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/left_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/default_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <LinearLayout
+                android:id="@+id/li1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                <TextView
+                    android:id="@+id/dtvName"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="난쉽"
+                    android:maxLines="2"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+                <TextView
+                    android:id="@+id/dtvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동래구 온천제 2동"
+                    android:textStyle="bold"
+                    android:textColor="#808080"
+                    app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="39.3°C"
+                    android:textColor="#419C9C"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/lv5" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:text="매너온도"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <View
+                android:id="@+id/vi_one"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true"
+                android:background="#BDBDBD"
+                app:layout_constraintTop_toBottomOf="@+id/li1"/>
+
+            <TextView
+                android:id="@+id/dtvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:text="샤넬 탑핸들 가방"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vi_one" />
+
+            <TextView
+                android:id="@+id/dtvIteminfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:text="아이템 설명"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dtvItemName" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/heart"/>
+
+        <View
+            android:id="@+id/vi"
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:background="#D1D1D1"
+            />
+
+        <TextView
+            android:id="@+id/dtvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="가격"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="120dp"
+            android:background="@drawable/shape"
+            android:backgroundTint="#FF6A1A"
+            android:text="채팅하기"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
